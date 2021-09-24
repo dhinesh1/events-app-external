@@ -2,7 +2,13 @@
   {{#events}}
     <li>
         <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
+        <p>{{ description }} &nbsp; &nbsp;(ID : {{ id }})</p>
+        <p>Likes : {{likes}}</p>
+        <form action="/addLike" method="post">
+        <input name="likes" type="hidden" value={{likes}} /> 
+        <input name="id" type="hidden" value={{id}} />
+        <button type="submit" name="like" value="submit" >Like</button>
+        </form>
     </li>
   {{/events}}
 </ul>
